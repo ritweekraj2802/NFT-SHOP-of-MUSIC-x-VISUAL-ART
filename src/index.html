@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background: white;
+      margin-bottom: 300px;
+    }
+
+    .header {
+      padding: 10px;
+      text-align: center;
+      background:#00BEC5;
+    }
+    .button {
+      position: relative;
+      background-color: #4CAF50;
+      border: none;
+      font-size: 18px;
+      color: #FFFFFF;
+      padding: 5px;
+      width: 150px;
+      text-align: center;
+      transition-duration: 0.4s;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  #inner1 {
+   float:left; 
+
+   
+}
+
+.text{
+  width: 30px;
+  text-align: center;
+     
+  }
+
+  .divText{
+    padding-top: 10px;
+    place-items: center;
+    display: grid;
+  }
+
+  #drop_zone {
+  border: 5px solid blue;
+  width:  200px;
+  height: 1000px;
+}
+
+  </style>
+  <script src="../p5.js"></script>
+  <script src="../addons/p5.sound.js"></script>
+  <script src='../addons/waxjs.js'></script>
+  <script src="sketch.js"></script>
+  <script src="waxApi.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  
+  <!-- <button onclick="playSong()">Play Me</button> -->
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="inner1"><img l src="../assets/matiz_white.PNG" alt="Matiz.io" style="width:120px;height:100px;"></div>
+    <div><input type="button" value= "Connect Wallet" class="button" onclick="login()"></input></div>
+  </div>
+  <div class="divText"><input class="text" type="text" value= "0"></div>
+  <div class="divText"><input type="file"
+    id="avatar" name="avatar" onchange="playAudio()"
+    accept="*"></div>
+  <!-- <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"">
+    <p>Drag one or more files to this Drop Zone ...</p>
+  </div> -->
+  <main>
+  </main>
+</body>
+
+</html>
